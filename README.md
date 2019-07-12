@@ -1,6 +1,4 @@
-# Composer template for Drupal projects
-
-[![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
+# Composer template for FRMWRK Drupal projects
 
 This project template provides a starter kit for managing your site
 dependencies with [Composer](https://getcomposer.org/).
@@ -19,11 +17,18 @@ for your setup.
 
 After that you can create the project:
 
-```
-composer create-project drupal-composer/drupal-project:8.x-dev some-dir --no-interaction
-```
+  1. Create new base
+    ```
+    composer create-project frmwrk/drupal-project:base-dev some-dir --no-interaction
+    ```
 
-With `composer require ...` you can download new dependencies to your
+  1.  Spin up you development container with DrupalVM or Lando (.lanndo file included)
+
+  1.  run `drush si --existing-config`
+
+  1.  Commit the initial files.
+
+  1. With `composer require ...` you can download new dependencies to your
 installation.
 
 ```
@@ -54,7 +59,7 @@ When installing the given `composer.json` some tasks are taken care of:
 ## Updating Drupal Core
 
 This project will attempt to keep all of your Drupal Core files up-to-date; the
-project [drupal/core-composer-scaffold](https://github.com/drupal/core-composer-scaffold)
+project [drupal-composer/drupal-scaffold](https://github.com/drupal-composer/drupal-scaffold)
 is used to ensure that your scaffold files are updated every time drupal/core is
 updated. If you customize any of the "scaffolding" files (commonly .htaccess),
 you may need to merge conflicts if any of your modified files are updated in a
@@ -62,8 +67,8 @@ new release of Drupal core.
 
 Follow the steps below to update your core files.
 
-1. Run `composer update drupal/core drupal/core-dev --with-dependencies` to update Drupal Core and its dependencies.
-2. Run `git diff` to determine if any of the scaffolding files have changed.
+1. Run `composer update drupal/core webflo/drupal-core-require-dev "symfony/*" --with-dependencies` to update Drupal Core and its dependencies.
+1. Run `git diff` to determine if any of the scaffolding files have changed.
    Review the files for any changes and restore any customizations to
   `.htaccess` or `robots.txt`.
 1. Commit everything all together in a single commit, so `web` will remain in
@@ -84,31 +89,6 @@ that the generated `composer.json` might differ from this project's file.
 
 ## FAQ
 
-### Should I commit the contrib modules I download?
-
-Composer recommends **no**. They provide [argumentation against but also
-workrounds if a project decides to do it anyway](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).
-
-### Should I commit the scaffolding files?
-
-The [Drupal Composer Scaffold](https://github.com/drupal/core-composer-scaffold) plugin can download the scaffold files (like
-index.php, update.php, …) to the web/ directory of your project. If you have not customized those files you could choose
-to not check them into your version control system (e.g. git). If that is the case for your project it might be
-convenient to automatically run the drupal-scaffold plugin after every install or update of your project. You can
-achieve that by registering `@composer drupal:scaffold` as post-install and post-update command in your composer.json:
-
-```json
-"scripts": {
-    "post-install-cmd": [
-        "@composer drupal:scaffold",
-        "..."
-    ],
-    "post-update-cmd": [
-        "@composer drupal:scaffold",
-        "..."
-    ]
-},
-```
 ### How can I apply patches to downloaded modules?
 
 If you need to apply patches (depending on the project being modified, a pull
@@ -126,9 +106,6 @@ section of composer.json:
     }
 }
 ```
-### How do I switch from packagist.drupal-composer.org to packages.drupal.org?
-
-Follow the instructions in the [documentation on drupal.org](https://www.drupal.org/docs/develop/using-composer/using-packagesdrupalorg).
 
 ### How do I specify a PHP version ?
 
