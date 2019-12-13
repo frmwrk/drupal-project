@@ -93,6 +93,7 @@
         "drupal/username_enumeration_prevention": "^1.0@beta",
         "drupal/video_embed_field": "^2.1",
         "drupal/webform": "^5.2",
+        "drupal/webform_jsonschema": "1.x-dev",
         "drush/drush": "^9.7.1 | ^10.0.0",
         "frmwrk/frmwrk_decoupled": "dev-master",
         "vlucas/phpdotenv": "^4.0",
