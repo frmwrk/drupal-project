@@ -99,7 +99,7 @@ settings:
   draft_loaded_message: ''
   confirmation_type: url_message
   confirmation_title: ''
-  confirmation_message: 'Your message has been sent.'
+  confirmation_message: 'Uw bericht is verzonden.'
   confirmation_url: '<front>'
   confirmation_attributes: {  }
   confirmation_back: true
@@ -206,6 +206,7 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      parameters: {  }
   email_notification:
     id: email
     label: E-mailmelding
@@ -240,3 +241,4 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      parameters: {  }

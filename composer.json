@@ -170,9 +170,6 @@
             },
             "drupal/graphql": {
                 "Notice: undefined index: schema": "patches/undefined-index-schema.patch"
-            },
-            "drupal/jsonapi_extras": {
-                "Compatibility with Drupal 8.8.x - 3089444 ": "https://www.drupal.org/files/issues/2019-11-19/3089444-21.patch"
             }
         }
     },

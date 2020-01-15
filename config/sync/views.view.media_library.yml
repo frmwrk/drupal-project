@@ -16,9 +16,9 @@ dependencies:
 _core:
   default_config_hash: 5sfZZetHlReG1VQx9CbyIBhKFWYSZEU94dOy0yy0deE
 id: media_library
-label: 'Media library'
+label: Media-bibliotheek
 module: views
-description: ''
+description: 'Media zoeken en beheren.'
 tag: ''
 base_table: media_field_data
 base_field: mid
@@ -26,7 +26,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Hoofd
     position: 0
     display_options:
       access:
@@ -47,13 +47,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: 'Apply filters'
+          submit_button: 'Filters toepassen'
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Sorteren op'
           expose_sort_order: false
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Oplopend
+          sort_desc_label: Aflopend
       pager:
         type: mini
         options:
@@ -63,12 +63,12 @@ display:
           total_pages: null
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Items per pagina'
             items_per_page_options: '6, 12, 24, 48'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Alle -'
             offset: false
-            offset_label: Offset
+            offset_label: Startpunt
           tags:
             previous: ‹‹
             next: ››
@@ -134,7 +134,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Action
+          action_title: Actie
           include_exclude: exclude
           selected_actions: {  }
           entity_type: media
@@ -204,7 +204,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: 'Publishing status'
+            label: Publicatiestatus
             description: null
             use_operator: false
             operator: status_op
@@ -218,7 +218,7 @@ display:
             operator_list: {  }
           is_grouped: true
           group_info:
-            label: Published
+            label: Gepubliceerd
             description: ''
             identifier: status
             optional: true
@@ -229,11 +229,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Gepubliceerd
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: 'Niet gepubliceerd'
                 operator: '='
                 value: '0'
           plugin_id: boolean
@@ -252,7 +252,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: Name
+            label: Naam
             description: ''
             use_operator: false
             operator: name_op
@@ -294,7 +294,7 @@ display:
           exposed: true
           expose:
             operator_id: bundle_op
-            label: 'Media type'
+            label: Mediatype
             description: ''
             use_operator: false
             operator: bundle_op
@@ -311,7 +311,7 @@ display:
             operator_list: {  }
           is_grouped: false
           group_info:
-            label: 'Media type'
+            label: Mediatype
             description: null
             identifier: bundle
             optional: true
@@ -338,7 +338,7 @@ display:
           order: DESC
           exposed: true
           expose:
-            label: 'Newest first'
+            label: 'Nieuwste eerst'
           granularity: second
           entity_type: media
           entity_field: created
@@ -353,7 +353,7 @@ display:
           order: ASC
           exposed: true
           expose:
-            label: 'Name (A-Z)'
+            label: 'Naam (A-Z)'
           entity_type: media
           entity_field: name
           plugin_id: standard
@@ -367,7 +367,7 @@ display:
           order: DESC
           exposed: true
           expose:
-            label: 'Name (Z-A)'
+            label: 'Naam (Z-A)'
           entity_type: media
           entity_field: name
           plugin_id: standard
@@ -384,7 +384,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'No media available.'
+          content: 'Geen media beschikbaar.'
           plugin_id: text_custom
       relationships: {  }
       display_extenders: {  }
@@ -402,7 +402,7 @@ display:
   page:
     display_plugin: page
     id: page
-    display_title: Page
+    display_title: Pagina
     position: 1
     display_options:
       display_extenders: {  }
@@ -602,7 +602,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: Name
+            label: Naam
             description: ''
             use_operator: false
             operator: name_op
@@ -647,7 +647,7 @@ display:
           exception:
             value: all
             title_enable: false
-            title: All
+            title: Alle
           title_enable: false
           title: ''
           default_argument_type: fixed
@@ -683,7 +683,7 @@ display:
           table: views
           field: display_link
           display_id: widget
-          label: Grid
+          label: Raster
           plugin_id: display_link
           empty: true
         display_link_table:
@@ -691,7 +691,7 @@ display:
           table: views
           field: display_link
           display_id: widget_table
-          label: Table
+          label: Tabel
           plugin_id: display_link
           empty: true
       css_class: 'media-library-view js-media-library-view media-library-view--widget'
@@ -707,7 +707,7 @@ display:
   widget_table:
     display_plugin: page
     id: widget_table
-    display_title: 'Widget (table)'
+    display_title: 'Widget (tabel)'
     position: 3
     display_options:
       display_extenders: {  }
@@ -742,7 +742,7 @@ display:
           element_class: ''
         thumbnail__target_id:
           id: thumbnail__target_id
-          label: Thumbnail
+          label: Miniatuur
           table: media_field_data
           field: thumbnail__target_id
           relationship: none
@@ -755,7 +755,7 @@ display:
             image_link: ''
         name:
           id: name
-          label: Name
+          label: Naam
           table: media_field_data
           field: name
           relationship: none
@@ -767,7 +767,7 @@ display:
             link_to_entity: false
         uid:
           id: uid
-          label: Author
+          label: Auteur
           table: media_field_revision
           field: uid
           relationship: none
@@ -779,7 +779,7 @@ display:
             link: true
         changed:
           id: changed
-          label: Updated
+          label: Bijgewerkt
           table: media_field_data
           field: changed
           relationship: none
@@ -849,7 +849,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: Name
+            label: Naam
             description: ''
             use_operator: false
             operator: name_op
@@ -894,7 +894,7 @@ display:
           exception:
             value: all
             title_enable: false
-            title: All
+            title: Alle
           title_enable: false
           title: ''
           default_argument_type: fixed
@@ -930,7 +930,7 @@ display:
           table: views
           field: display_link
           display_id: widget
-          label: Grid
+          label: Raster
           plugin_id: display_link
           empty: true
         display_link_table:
@@ -938,7 +938,7 @@ display:
           table: views
           field: display_link
           display_id: widget_table
-          label: Table
+          label: Tabel
           plugin_id: display_link
           empty: true
       css_class: 'media-library-view js-media-library-view media-library-view--widget'

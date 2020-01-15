@@ -9,6 +9,6 @@ _core:
   default_config_hash: W88NYg31DbaVNQx1Uir_dwwXHVtF09QOq4VBGsH1Snk
 id: yes_no
 label: Ja/Nee
-category: General
+category: Algemeen
 likert: false
 options: "Ja: Ja\r\nNee: Nee\n"

@@ -9,6 +9,6 @@ _core:
   default_config_hash: YNrKbYrWWjeubUUM8AsQ19KnX7cU1elACR14CZJHmdg
 id: days
 label: Dagen
-category: 'Date and time'
+category: 'Datum en tijd'
 likert: false
 options: "Zondag: Zondag\r\nMaandag: Maandag\r\nDinsdag: Dinsdag\r\nWoensdag: Woensdag\r\nDonderdag: Donderdag\r\nVrijdag: Vrijdag\r\nZaterdag: Zaterdag\n"
